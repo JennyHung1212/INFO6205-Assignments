@@ -41,7 +41,6 @@ public class InsertionSortBenchmark {
         final Class<Integer> cl = Integer.class;
         final Integer[] xs = helper.random(cl, a -> a.nextInt(10000) );
         final SortWithHelper<Integer> sorter = new InsertionSort<Integer>(helper);
-        sorter.sort(xs);
         final Benchmark<Integer[]> bm = new Benchmark_Timer<Integer[]>("Insertion sort: ordered", b -> sorter.sort(b));
         double result = bm.run(xs, 10);
         System.out.println(result);
@@ -55,7 +54,6 @@ public class InsertionSortBenchmark {
         final Integer[] xs = list.toArray(new Integer[0]);
         final Helper<Integer> helper = new BaseHelper<Integer>("InsertionSort",  size, System.currentTimeMillis(), config);
         final SortWithHelper<Integer> sorter = new InsertionSort<Integer>(helper);
-        sorter.sort(xs);
         final Benchmark<Integer[]> bm = new Benchmark_Timer<Integer[]>("Insertion sort: ordered", b -> sorter.sort(b));
         double result = bm.run(xs, 10);
         System.out.println(result);
@@ -70,7 +68,7 @@ public class InsertionSortBenchmark {
         final Integer[] xs = list.toArray(new Integer[0]);
         final Helper<Integer> helper = new BaseHelper<Integer>("InsertionSort",  size, System.currentTimeMillis(), config);
         final SortWithHelper<Integer> sorter = new InsertionSort<Integer>(helper);
-        sorter.sort(xs);
+
         final Benchmark<Integer[]> bm = new Benchmark_Timer<Integer[]>("Insertion sort: ordered", b -> sorter.sort(b));
         double result = bm.run(xs, 10);
         System.out.println(result);
@@ -84,7 +82,7 @@ public class InsertionSortBenchmark {
         final Integer[] xs = list.toArray(new Integer[0]);
         final Helper<Integer> helper = new BaseHelper<Integer>("InsertionSort",  size, System.currentTimeMillis(), config);
         final SortWithHelper<Integer> sorter = new InsertionSort<Integer>(helper);
-        sorter.sort(xs);
+
         final Benchmark<Integer[]> bm = new Benchmark_Timer<Integer[]>("Insertion sort: ordered", b -> sorter.sort(b));
         double result = bm.run(xs, 10);
         System.out.println(result);
