@@ -16,8 +16,17 @@ public class InsertionSortBasic {
         for (int i = lo + 1; i < hi; i++) swap(i, a);
     }
 
-    private void swap(int i, Object[] a) {
+    private void swap(int i, Comparable[] a) {
         // TO BE IMPLEMENTED
+        int curr = i;
+        while(less(a[curr], a[curr-1])) {
+            swap(a, curr, curr-1);
+            curr--;
+        }
+    }
+
+    private static boolean less(Comparable v, Comparable w) {
+        return v.compareTo(w) < 0;
     }
 
     private void swap(Object[] a, int j, int i) {

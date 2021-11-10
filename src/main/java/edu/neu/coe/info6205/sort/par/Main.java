@@ -22,7 +22,7 @@ public class Main {
         Random random = new Random();
         int[] array = new int[2000000];
         ArrayList<Long> timeList = new ArrayList<>();
-        for (int j = 50; j < 100; j++) {
+        for (int j = 99; j < 151; j++) {
             ParSort.cutoff = 10000 * (j + 1);
             // for (int i = 0; i < array.length; i++) array[i] = random.nextInt(10000000);
             long time;
@@ -43,7 +43,7 @@ public class Main {
             FileOutputStream fis = new FileOutputStream("./src/result.csv");
             OutputStreamWriter isr = new OutputStreamWriter(fis);
             BufferedWriter bw = new BufferedWriter(isr);
-            int j = 0;
+            int j = 99;
             for (long i : timeList) {
                 String content = (double) 10000 * (j + 1) / 2000000 + "," + (double) i / 10 + "\n";
                 j++;

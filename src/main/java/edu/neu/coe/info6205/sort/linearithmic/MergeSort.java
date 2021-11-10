@@ -60,6 +60,12 @@ public class MergeSort<X extends Comparable<X>> extends SortWithHelper<X> {
         }
 
         // TO BE IMPLEMENTED : implement merge sort with insurance and no-copy optimizations
+        if(lo >= hi) return;
+        int mid = lo + (hi-lo)/2;
+        sort(aux, a, lo, mid);
+        sort(aux, a, mid+1, hi);
+        if(helper.less(a[mid], a[mid+1])) return;
+        merge(a, aux, lo, mid, hi);
     }
 
     // TODO combine with MergeSortBasic perhaps.

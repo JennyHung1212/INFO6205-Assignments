@@ -36,8 +36,22 @@ public class ThreeSumQuadratic implements ThreeSum {
      * @return a Triple such that
      */
     public List<Triple> getTriples(int j) {
+        System.out.println("get triples");
         List<Triple> triples = new ArrayList<>();
         // TO BE IMPLEMENTED : implement getTriples
+        int left = j-1;
+        int right = j+1;
+        while(left >= 0 && right <= length-1) {
+            if(a[left] + a[j] + a[right] > 0) {
+                left--;
+            } else if (a[left] + a[j] + a[right] < 0) {
+                right++;
+            } else {
+                triples.add(new Triple(left, j, right));
+                left--;
+                right++;
+            }
+        }
         return triples;
     }
 
